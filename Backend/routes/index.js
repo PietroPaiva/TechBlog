@@ -1,10 +1,7 @@
-const express = require('express');
+import express from 'express';
 const router = express.Router();
-const path = require('path')
+import { getArticles } from '../controllers/article.controllers.js'
 
-const articleControllers = require('../controllers/article.controllers')
+router.get('/', getArticles);
 
-router.get('/', articleControllers.getAllArticles());
-
-
-module.exports = router;
+export default router;
