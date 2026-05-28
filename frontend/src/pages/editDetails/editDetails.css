@@ -6,6 +6,24 @@
     padding: 49px 24px 80px;
 }
 
+.edit-details-top button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #67a22d;
+    color: #ffffff;
+    border: none;
+    border-radius: 9px;
+    padding: 11px 18px;
+    min-width: 96px;
+    font: 700 13px "Newsreader", Georgia, serif;
+    cursor: pointer;
+}
+
+.edit-details-top button:hover {
+    background: #558a24;
+}
+
 .edit-details-container {
     width: min(810px, 100%);
     margin: 0 auto;

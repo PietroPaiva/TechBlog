@@ -1,0 +1,95 @@
+.article-details-page {
+    min-height: 100vh;
+    background: #ffffff;
+    color: #1b1d16;
+    font-family: "Newsreader", Georgia, serif;
+}
+
+.article-details-container {
+    width: min(808px, calc(100% - 48px));
+    margin: 40px auto 0;
+}
+
+.article-details-title {
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin: 0 0 12px;
+}
+
+.article-tags {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.article-tags p {
+    margin: 0;
+    background: #edf2e8;
+    color: #1b1d16;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 4px 12px;
+    border-radius: 20px;
+}
+
+.article-meta {
+    font-size: 14px;
+    color: #7e8876;
+    margin: 0 0 24px;
+}
+
+.article-body {
+    width: 100%;
+    min-height: 120px;
+    border: none;
+    outline: none;
+    resize: none;
+    font: 400 16px "Newsreader", Georgia, serif;
+    color: #1b1d16;
+    line-height: 1.7;
+    margin-bottom: 40px;
+    background: transparent;
+}
+
+.comments-section h2 {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 16px;
+}
+
+.comment-textarea {
+    width: 100%;
+    min-height: 120px;
+    border: none;
+    outline: none;
+    resize: none;
+    border-radius: 10px;
+    background: #edf2e8;
+    padding: 14px;
+    font: 400 14px "Newsreader", Georgia, serif;
+    color: #1b1d16;
+    box-sizing: border-box;
+    margin-bottom: 12px;
+}
+
+.comment-textarea::placeholder {
+    color: #7e8876;
+}
+
+.comment-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #67a22d;
+    color: #ffffff;
+    border: none;
+    border-radius: 9px;
+    padding: 11px 18px;
+    font: 700 13px "Newsreader", Georgia, serif;
+    cursor: pointer;
+}
+
+.comment-button:hover {
+    background: #558a24;
+}

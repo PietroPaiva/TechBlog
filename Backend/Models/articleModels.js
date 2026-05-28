@@ -23,16 +23,14 @@ export async function getArticle(id){
 
 export async function updateArticle(id, articleData){
 
-    const {title, author, content} = articleData 
+    const {title, author, content, tag1, tag2, tag3} = articleData 
     await connection.query(
         `UPDATE articles 
-        SET title = ?, author = ?, content = ?
+        SET title = ?, author = ?, content = ?, tag1 = ?, tag2 = ?, tag3 = ?
         WHERE id = ?`,
     
-        [title, author, content, id]
+        [title, author, content, tag1, tag2, tag3, id]
     )
-
-    
 }
 
 export async function removeArticle(id){

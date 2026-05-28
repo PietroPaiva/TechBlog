@@ -29,7 +29,7 @@ export default function AppRoutes(){
             element={<EditDetails />}
             />
 
-            <Route path="/articleDetails"
+            <Route path="/articleDetails/:id"
             element={<ArticleDetails />}
             />
 

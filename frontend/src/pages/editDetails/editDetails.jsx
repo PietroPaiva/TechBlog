@@ -51,7 +51,7 @@ const [article, setArticle] = useState({
                     <h1>Editar artigo</h1>
 
                     <button type="button" onClick={handleUpdate}>
-                        Criar artigo
+                        Editar artigo
                     </button>
 
                 </div>

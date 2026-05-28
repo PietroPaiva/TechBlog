@@ -1,7 +1,6 @@
 import { useState } from "react"
-import './addArticle.css'
-
 import axios from 'axios'
+import './addArticle.css'
 
 
 export default function AddArticle(){
@@ -18,10 +17,7 @@ export default function AddArticle(){
 
         try{
 
-            await axios.post(
-
-                `http://localhost:3000/articles`,
-
+            await axios.post(`http://localhost:3000/articles`,
                 {
                     title,
                     author,
@@ -37,9 +33,9 @@ export default function AddArticle(){
         }
 
         catch(error){
-
-            console.log(error)
-
+           if(error.response){
+        alert(error.response.data.errors.join('\n'))
+            }
         }
     }
 

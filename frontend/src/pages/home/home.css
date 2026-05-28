@@ -92,6 +92,16 @@
     font-weight: 500;
 }
 
+.article-content {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.article-item {
+    grid-template-columns: minmax(0, 1fr) 32px 32px 32px;
+}
+
 .article-content p {
     margin: 0;
     color: #7e8876;

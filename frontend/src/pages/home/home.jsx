@@ -57,30 +57,41 @@ export default function Home(){
             />
 
             <div className="article-list">
-                {filteredArticles.map(article => (
-                        <article className="article-item" key={article.id}>
-                            <div className="article-content">
-                                <h2>{article.title}</h2>
-                                <p>{article.description || article.author}</p>
-                            </div>
-                            
-                            <Link 
-                                className="edit-button"
-                                to={`/editDetails/${article.id}`}
-                                aria-label={`Editar ${article.title}`}
-                            >
-                                <span aria-hidden="true">✎</span>
-                            </Link>
 
-                            <button
-                                className="delete-button"
-                                type="button"
-                                onClick={() => removeArticle(article.id)}
-                                aria-label={`Remover ${article.title}`}
-                            >
-                                <span aria-hidden="true">🗑</span>
-                            </button>
-                        </article>
+                {filteredArticles.map(article => (
+                    <article className="article-item" key={article.id}>
+
+                        <div className="article-content">
+                            <h2>{article.title}</h2>
+                            <p>{article.author}</p>
+                            <p>{article.content}</p>
+                        </div>
+
+                        <Link 
+                            className="edit-button"
+                            to={`/articleDetails/${article.id}`}
+                            aria-label={`Ver ${article.title}`}
+                        >
+                            <span aria-hidden="true">👁</span>
+                        </Link>
+
+                        <Link 
+                            className="edit-button"
+                            to={`/editDetails/${article.id}`}
+                            aria-label={`Editar ${article.title}`}
+                        >
+                            <span aria-hidden="true">✎</span>
+                        </Link>
+
+                        <button
+                            className="delete-button"
+                            type="button"
+                            onClick={() => removeArticle(article.id)}
+                            aria-label={`Remover ${article.title}`}
+                        >
+                            <span aria-hidden="true">🗑</span>
+                        </button>
+                    </article>
                 ))}
             </div>
         </section>
