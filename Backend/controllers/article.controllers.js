@@ -1,5 +1,4 @@
 import { getAllArticles, getArticle, updateArticle, removeArticle, CreateArticle } from "../Models/articleModels.js";
-import { validateArticle } from "../service/service.js";
 
 
 export async function get(req, res){
