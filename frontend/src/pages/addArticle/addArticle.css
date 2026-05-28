@@ -1,0 +1,121 @@
+.add-article-page {
+    min-height: calc(100vh - 60px);
+    background: #ffffff;
+    color: #1b1d16;
+    font-family: "Newsreader", Georgia, serif;
+    padding: 49px 24px 80px;
+}
+
+.add-article-container {
+    width: min(810px, 100%);
+    margin: 0 auto;
+}
+
+.add-article-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 28px;
+}
+
+.add-article-top h1 {
+    margin: 0;
+    font-size: 30px;
+    line-height: 1.1;
+    font-weight: 800;
+}
+
+.add-article-top button {
+    min-width: 96px;
+    height: 35px;
+    border: 0;
+    border-radius: 9px;
+    background: #67a22d;
+    color: #ffffff;
+    cursor: pointer;
+    font: 700 13px "Newsreader", Georgia, serif;
+}
+
+.add-article-container label {
+    display: block;
+    margin: 0 0 11px;
+    font-size: 15px;
+    line-height: 1.1;
+    font-weight: 700;
+}
+
+.add-article-container input,
+.add-article-container textarea {
+    width: 100%;
+    border: 0;
+    outline: none;
+    border-radius: 9px;
+    background: #edf2e8;
+    color: #1b1d16;
+    font: 400 14px "Newsreader", Georgia, serif;
+}
+
+.add-article-container > input {
+    display: block;
+    height: 35px;
+    margin-bottom: 23px;
+    padding: 0 14px;
+}
+
+.add-article-container textarea {
+    display: block;
+    min-height: 126px;
+    padding: 16px 14px;
+    resize: vertical;
+}
+
+.add-article-container input::placeholder,
+.add-article-container textarea::placeholder {
+    color: #7e8876;
+    opacity: 1;
+}
+
+.tags-fields {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 23px;
+}
+
+.tags-fields input {
+    width: 88px;
+    height: 29px;
+    padding: 0 12px;
+    text-align: center;
+}
+
+@media (max-width: 640px) {
+    .add-article-page {
+        padding: 32px 16px 56px;
+    }
+
+    .add-article-top {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 14px;
+        margin-bottom: 24px;
+    }
+
+    .add-article-top h1 {
+        font-size: 27px;
+    }
+
+    .add-article-top button {
+        width: 100%;
+    }
+
+    .tags-fields {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .tags-fields input {
+        width: 100%;
+    }
+}

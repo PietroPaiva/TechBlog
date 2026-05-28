@@ -1,7 +1,7 @@
 import {BrowserRouter} from 'react-router-dom'
 import AppRoutes from './routes/appRoutes.jsx'
+import Header from './components/header/header.jsx'
 
-// import {toast, ToastContainer} from "react-toastify";
 
 function App() {
 
@@ -9,7 +9,7 @@ function App() {
     <>
 
     <BrowserRouter>
-
+    <Header />
     <AppRoutes />
 
     </BrowserRouter>

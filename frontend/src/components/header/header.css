@@ -1,0 +1,39 @@
+.header {
+    height: 60px;
+    padding: 0 42px;
+    border-bottom: 1px solid #e5e9e0;
+    background: #ffffff;
+    color: #1b1d16;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font: 700 16px "Newsreader", Georgia, serif;
+}
+
+.header-login-link {
+    color: #4f8f23;
+    font-size: 13px;
+    line-height: 1;
+    text-decoration: none;
+}
+
+.logout-button {
+    width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: 10px;
+    background: #edf2e8;
+    color: #1b1d16;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    font-size: 19px;
+    line-height: 1;
+    text-decoration: none;
+}
+
+@media (max-width: 640px) {
+    .header {
+        padding: 0 20px;
+    }
+}

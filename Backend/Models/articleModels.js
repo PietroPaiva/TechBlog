@@ -13,10 +13,11 @@ export async function getAllArticles(){
 export async function getArticle(id){
 
     const [article] = await connection.query(
-        `SELECT * FROM articles WHERE id = ?`
+        `SELECT * FROM articles WHERE id = ?`,
+        [id]
     )
 
-    return article
+    return article[0]
 
 }
 
@@ -44,7 +45,16 @@ export async function removeArticle(id){
     )
 }
 
-export async function CreateArticle(articleData){
+export async function CreateArticle(title, author, content, tags1, tags2, tags3){
 
-    const [article] = await.connection.query()
+    const [articleData] = await connection.query(
+        `INSERT INTO articles
+        (title, author, content, tag1, tag2, tag3)
+        VALUES
+        (?, ?, ?, ?, ?, ?)`,
+
+        [title, author, content, tags1, tags2, tags3]
+    )
+
+    return articleData
 }

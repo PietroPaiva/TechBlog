@@ -1,95 +1,89 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from "react";
 import axios from 'axios'
 import './home.css'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
-function Home() {
+export default function Home(){
+    const [articles, setArticles] = useState([]);
+    const [search, setSearch] = useState('');
 
-    const [articles, setArticles] = useState([])
+    const filteredArticles = articles.filter(article =>
+        (article.title || '')
+        .toLowerCase()
+        .includes(search.toLowerCase())
+    )
+    
 
     useEffect(() => {
+        axios.get('http://localhost:3000/articles')
 
-        axios.get('http://localhost:3000/')
+        .then(response => {
+            setArticles(response.data)
+        })
 
-            .then(response => {
-
-                console.log(response.data)
-
-                setArticles(response.data)
-
-            })
-
-            .catch(error => {
-
-                console.log(error)
-
-            })
-
+        .catch(error => {
+            console.log(error)
+        })
     }, [])
 
-    return (
+    async function removeArticle(id){
 
-        <div className="container">
+        try{
+            await axios.delete(`http://localhost:3000/articles/${id}`)
+            setArticles(articles.filter(article => article.id !== id))
+            alert('Artigo Removido') 
+        }
+        catch(error){
+            console.log(error)
+        }
+    }
 
-            <h1 className="title">
-                Todos os artigos
-            </h1>
 
-            <button className="create-button">
-                Criar artigo
-            </button>
+    return(
+    <main className="home-page">
 
-            <br />
-            <br />
 
-            <div className="header">
-
-                <p>Título</p>
-                <p>Autor</p>
-                <p>Tag1</p>
-                <p>Tag2</p>
-                <p>Tag3</p>
-                <p>Ações</p>
-
+        <section className="container">
+            <div className="top">
+                <h1 className="title">Todos os artigos</h1>
+                <Link className="create-button" to="/addArticle">Criar artigo</Link>
             </div>
 
-            {articles.map(article => (
+            <input 
+                className="search"
+                type="text"
+                placeholder="Pesquisar..."
+                onChange={(e) => setSearch(e.target.value)} 
+            />
 
-                <div
-                    className="row"
-                    key={article.id}
-                >
+            <div className="article-list">
+                {filteredArticles.map(article => (
+                        <article className="article-item" key={article.id}>
+                            <div className="article-content">
+                                <h2>{article.title}</h2>
+                                <p>{article.description || article.author}</p>
+                            </div>
+                            
+                            <Link 
+                                className="edit-button"
+                                to={`/editDetails/${article.id}`}
+                                aria-label={`Editar ${article.title}`}
+                            >
+                                <span aria-hidden="true">✎</span>
+                            </Link>
 
-                    <p>{article.title}</p>
-
-                    <p>{article.author}</p>
-
-                    <p>{article.tag1}</p>
-
-                    <p>{article.tag2}</p>
-
-                    <p>{article.tag3}</p>
-
-                    <div id='actionButtons'>
-                        <Link to={"/editDetails"}>
-                            <button className="edit-button">
-                                Editar
+                            <button
+                                className="delete-button"
+                                type="button"
+                                onClick={() => removeArticle(article.id)}
+                                aria-label={`Remover ${article.title}`}
+                            >
+                                <span aria-hidden="true">🗑</span>
                             </button>
-                        </Link>
-                        <Link to={"/articleDetails"}>
-                            <button className="edit-button">
-                                Ler
-                            </button>
-                        </Link>
-                    </div>
-
-                </div>
-
-            ))}
-
-        </div>
-
+                        </article>
+                ))}
+            </div>
+        </section>
+    </main>
     )
 }
-
-export default Home

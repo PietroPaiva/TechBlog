@@ -1,80 +1,196 @@
-body {
+.home-page {
+    min-height: 100vh;
+    background: #ffffff;
+    color: #1b1d16;
+    font-family: "Newsreader", Georgia, serif;
+}
 
-    background-color: #f7f7f7;
-    font-family: Arial;
+.logout-button {
+    width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: 10px;
+    background: #edf2e8;
+    color: #1b1d16;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    font-size: 19px;
+    line-height: 1;
 }
 
 .container {
-
-    width: 80%;
-    margin: auto;
-    margin-top: 40px;
-}
-
-.title {
-
-    font-size: 40px;
-    margin-bottom: 20px;
+    width: min(808px, calc(100% - 48px));
+    margin: 31px auto 0;
 }
 
 .top {
-
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 15px;
+}
+
+.title {
+    font-size: 30px;
+    line-height: 1.1;
+    font-weight: 800;
+    margin: 0;
 }
 
 .create-button {
-
-    background-color: #6ca52d;
-    color: white;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #67a22d;
+    color: #ffffff;
     border: none;
-    padding: 12px 20px;
-    border-radius: 10px;
+    border-radius: 9px;
+    padding: 11px 18px;
+    min-width: 96px;
+    font: 700 13px "Newsreader", Georgia, serif;
+    text-decoration: none;
     cursor: pointer;
 }
 
 .search {
-
     width: 100%;
-    padding: 15px;
+    height: 49px;
     border: none;
-border-radius: 10px;
-    margin-bottom: 30px;
+    outline: none;
+    border-radius: 9px;
+    background: #edf2e8;
+    margin-bottom: 22px;
+    padding: 0 14px;
+    color: #77806f;
+    font: 400 14px "Newsreader", Georgia, serif;
 }
 
-.header,
-.row {
+.search::placeholder {
+    color: #7e8876;
+    opacity: 1;
+}
 
+.article-list {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr;
-    gap: 20px;
-    align-items: center;
-    padding: 15px;
-    background-color: white;
-    margin-bottom: 10px;
-    border-radius: 10px;
+    gap: 15px;
 }
 
-.header {
+.article-item {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 32px 32px;
+    align-items: center;
+    gap: 14px;
+    min-height: 51px;
+}
 
-    font-weight: bold;
-    background-color: #ececec;
+.article-content h2 {
+    margin: 0 0 3px;
+    font-size: 15px;
+    line-height: 1.2;
+    font-weight: 500;
+}
+
+.article-content p {
+    margin: 0;
+    color: #7e8876;
+    font-size: 13px;
+    line-height: 1.2;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .edit-button {
-
-    background-color: transparent;
-    border: 1px solid #6ca52d;
-    color: #6ca52d;
-    padding: 8px;
-    border-radius: 5px;
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: transparent;
+    color: #77876c;
+    display: grid;
+    place-items: center;
     cursor: pointer;
-    width: 100px;
+    font-size: 22px;
+    line-height: 1;
+    text-decoration: none;
 }
 
-#actionButtons{
+.delete-button {
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 8px;
+    background: transparent;
+    color: #9a3f36;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 1;
+}
+
+.delete-button:hover {
+    background: #f4e7e5;
+}
+
+.pagination {
     display: flex;
-    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin: 24px 0 28px;
+}
+
+.pagination button {
+    width: 22px;
+    height: 22px;
+    border: none;
+    border-radius: 50%;
+    background: transparent;
+    color: #1b1d16;
+    font: 500 13px "Newsreader", Georgia, serif;
+    cursor: pointer;
+}
+
+.pagination .active {
+    width: 34px;
+    height: 34px;
+    background: #edf2e8;
+    font-weight: 700;
+}
+
+@media (max-width: 640px) {
+    .home-header {
+        padding: 0 20px;
+    }
+
+    .container {
+        width: calc(100% - 32px);
+        margin-top: 24px;
+    }
+
+    .top {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .title {
+        font-size: 27px;
+    }
+
+    .create-button {
+        width: 100%;
+    }
+
+    .article-item {
+        grid-template-columns: minmax(0, 1fr) 32px 32px;
+        gap: 10px;
+    }
+
+    .edit-button,
+    .delete-button {
+        justify-self: end;
+    }
 }

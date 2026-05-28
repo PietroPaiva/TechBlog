@@ -25,7 +25,7 @@ export default function AppRoutes(){
             element={<Home />}
             />
 
-            <Route path="/editDetails"
+            <Route path="/editDetails/:id"
             element={<EditDetails />}
             />
 

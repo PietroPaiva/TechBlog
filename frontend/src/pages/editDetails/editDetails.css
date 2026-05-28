@@ -1,0 +1,103 @@
+.edit-details-page {
+    min-height: calc(100vh - 60px);
+    background: #ffffff;
+    color: #1b1d16;
+    font-family: "Newsreader", Georgia, serif;
+    padding: 49px 24px 80px;
+}
+
+.edit-details-container {
+    width: min(810px, 100%);
+    margin: 0 auto;
+}
+
+.edit-details-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 28px;
+}
+
+.edit-details-top h1 {
+    margin: 0;
+    font-size: 30px;
+    line-height: 1.1;
+    font-weight: 800;
+}
+
+.edit-details-container label {
+    display: block;
+    margin: 0 0 11px;
+    font-size: 15px;
+    line-height: 1.1;
+    font-weight: 700;
+}
+
+.edit-details-container input,
+.edit-details-container textarea {
+    width: 100%;
+    border: 0;
+    outline: none;
+    border-radius: 9px;
+    background: #edf2e8;
+    color: #1b1d16;
+    font: 400 14px "Newsreader", Georgia, serif;
+}
+
+.edit-details-container > input {
+    display: block;
+    height: 35px;
+    margin-bottom: 23px;
+    padding: 0 14px;
+}
+
+.edit-details-container textarea {
+    display: block;
+    min-height: 126px;
+    padding: 16px 14px;
+    resize: vertical;
+}
+
+.edit-details-container input::placeholder,
+.edit-details-container textarea::placeholder {
+    color: #7e8876;
+    opacity: 1;
+}
+
+.edit-tags-fields {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 23px;
+}
+
+.edit-tags-fields input {
+    width: 88px;
+    height: 29px;
+    padding: 0 12px;
+    text-align: center;
+}
+
+@media (max-width: 640px) {
+    .edit-details-page {
+        padding: 32px 16px 56px;
+    }
+
+    .edit-details-top {
+        margin-bottom: 24px;
+    }
+
+    .edit-details-top h1 {
+        font-size: 27px;
+    }
+
+    .edit-tags-fields {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .edit-tags-fields input {
+        width: 100%;
+    }
+}
