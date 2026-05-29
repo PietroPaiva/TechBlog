@@ -1,5 +1,6 @@
 .header {
     height: 60px;
+    width: 100%;
     padding: 0 42px;
     border-bottom: 1px solid #e5e9e0;
     background: #ffffff;
@@ -8,16 +9,10 @@
     align-items: center;
     justify-content: space-between;
     font: 700 16px "Newsreader", Georgia, serif;
+    box-sizing: border-box;
 }
 
-.header-login-link {
-    color: #4f8f23;
-    font-size: 13px;
-    line-height: 1;
-    text-decoration: none;
-}
-
-.logout-button {
+.back-button {
     width: 36px;
     height: 36px;
     border: none;
@@ -29,7 +24,6 @@
     cursor: pointer;
     font-size: 19px;
     line-height: 1;
-    text-decoration: none;
 }
 
 @media (max-width: 640px) {
