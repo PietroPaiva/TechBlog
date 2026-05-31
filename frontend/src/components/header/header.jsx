@@ -1,15 +1,17 @@
 import './header.css'
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
+
+
 
 export default function Header(){
 
-
+const navigate = useNavigate()
     return(
          <header className="header">
             <span>TechBlog</span>
-            <Link to="/">
-                <button className="back-button">↩</button>
-            </Link>
+        
+            <button className="back-button" onClick={() => navigate(-1)}>↩</button>
+            
         </header>
     )
 }

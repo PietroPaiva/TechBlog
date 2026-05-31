@@ -1,5 +1,5 @@
 import { getAllArticles, getArticle, updateArticle, removeArticle, CreateArticle } from "../Models/articleModels.js";
-import { validateArticle } from "../service/service.js";
+import { validateArticle } from "../service/articleService.js";
 
 
 export async function get(req, res){
@@ -10,7 +10,7 @@ export async function get(req, res){
     res.status(200).json(articles)
 }
 
-export async function getOne(req, res){
+export async function getByID(req, res){
     
     const {id} = req.params 
 
